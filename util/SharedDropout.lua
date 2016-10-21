@@ -1,6 +1,6 @@
 local SharedDropout, Parent = torch.class('nn.SharedDropout', 'nn.Dropout')
 
-SharedDropout_noise = torch.CudaTensor()
+SharedDropout_noise = torch.Tensor()
 
 function SharedDropout:__init(p,v1,inplace)
    Parent.__init(self, p, v1, inplace)
