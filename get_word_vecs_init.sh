@@ -1,4 +1,4 @@
-!# /bin/bash
+#!/bin/bash
 
 curl -s http://nlp.stanford.edu/data/glove.6B.zip | bash
 fastjar xvf glove.6B.zip

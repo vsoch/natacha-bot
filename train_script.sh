@@ -1,4 +1,4 @@
-!# /bin/bash
+#!/bin/bash
 
 th train.lua \
 	-gpuid -1 \
