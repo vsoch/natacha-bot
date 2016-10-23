@@ -10,7 +10,8 @@ th train.lua \
 	-threshold 2 \
 	-print_every 10 \
 	-glove 1 \
-	-rnn_size 128 \
+	-rnn_size 256 \
 	-num_layers 2 \
 	-dropout 0.5 \
+	-eval_val_every 500 \
 	# -recurrent_dropout 0.5 \
