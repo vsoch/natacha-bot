@@ -12,6 +12,6 @@ th train.lua \
 	-glove 1 \
 	-rnn_size 256 \
 	-num_layers 2 \
-	-dropout 0.5 \
+	-dropout 0.4 \
 	-eval_val_every 500 \
 	# -recurrent_dropout 0.5 \
