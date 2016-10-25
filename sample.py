@@ -24,7 +24,7 @@ def get_sample(seed_text=None):
     sample_clean = str(sample).split("--------------------------")[1]
     sample_clean = sample_clean.replace(" ' ", "'")
     sample_clean = sample_clean.replace(" .", ".").replace(" ?", "?").\
-        replace(" !", "!").replace(" ,", ",")
+        replace(" !", "!").replace(" ,", ",").replace(" ;", ";")
     sample_clean = ' '.join(sample_clean.split())
     return seed_text.strip() + ' ' + sample_clean
 
