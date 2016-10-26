@@ -5,7 +5,7 @@ Generates new speeches in Donald Trump's style using a [word-level RNN](https://
 * Pull docker image: `docker pull rtlee/t-bot:dev`
 * Run docker container: `docker run -t -i rtlee/t-bot:dev /bin/bash`
 * Train model _(optional)_: `source train_script.sh`
-* Sample from model: `th sample.lua cv/word-rrn-trained.t7 -temperature .7 -length 500 -gpuid -1 -primetext "I will make America "`
+* Sample from model: `python sample.py "I am going to"`
 
 ## To do
 * [ ] Add recent speeches
