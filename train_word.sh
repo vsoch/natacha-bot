@@ -5,7 +5,7 @@ th train.lua \
 	-data_dir data/trump  \
 	-train_frac 0.96 \
 	-val_frac 0.04 \
-	-max_epochs 30 \
+	-max_epochs 50 \
 	-word_level 1 \
 	-threshold 2 \
 	-print_every 10 \
@@ -14,4 +14,3 @@ th train.lua \
 	-num_layers 2 \
 	-dropout 0.4 \
 	-eval_val_every 500 \
-	# -recurrent_dropout 0.5 \
