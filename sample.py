@@ -15,7 +15,7 @@ def get_sample(seed_text=None):
         'th', 'sample.lua',
         'cv/word-rrn-trained.t7',
         '-temperature', '.75',
-        '-length', '200',
+        '-length', '500',
         '-gpuid', '-1',
         '-primetext', seed_text
     ])
