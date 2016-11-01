@@ -34,4 +34,4 @@ def clean_str(string):
     return string.strip().lower()
 
 if __name__ == '__main__':
-    save_clean("input_raw.txt", "input.txt")
+    save_clean("input.txt", "input_normalized/input.txt")
