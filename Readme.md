@@ -4,7 +4,9 @@ Generates new speeches in Donald Trump's style using a [word-level RNN](https://
 ## Usage
 * Pull docker image: `docker pull rtlee/t-bot:dev`
 * Run docker container: `docker run -t -i rtlee/t-bot:dev /bin/bash`
-* Train model _(optional)_: `source train_script.sh`
+* Optional
+	* Train model: `source train_script.sh`
+	* Update model: `WIP`
 * Sample from model: `python sample.py "I am going to"`
 
 ## To do
