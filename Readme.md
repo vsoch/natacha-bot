@@ -4,11 +4,13 @@ _Trump bot_ generates new speeches in Donald Trump's style using a [word-level R
 ## Usage: sampling
 * Pull docker image: `docker pull rtlee/t-bot:sample`
 * Run docker container: `docker run -t -i rtlee/t-bot:sample /bin/bash`
+* Update the git repo: `git pull origin master`
 * Sample from models: `python sample.py "I will build a"`
 
 ## Usage: training
 * Pull docker image: `docker pull rtlee/t-bot:train`
 * Run docker container: `docker run -t -i rtlee/t-bot:train /bin/bash`
+* Update the git repo: `git pull origin master`
 * Train models
 	* Modify training scripts as necessary: `train_char.sh` and `train_word.sh`
 	* Run training scripts: `./train_char.sh` and `./train_word.sh`
