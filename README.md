@@ -1,8 +1,8 @@
-# Natacha bot
+# Natacha Bot
 
 The _natacha bot_ generates posts in the style of an individual, Natacha. It is derived from the [Trump bot](https://github.com/rtlee9/Trump-bot) using Facebook posts and comments using a [word-level RNN](https://github.com/larspars/word-rnn) and [pre-trained](http://nlp.stanford.edu/projects/glove/) GloVe word vectors. This repo corresponds to [this](https://eightportions.com/2016-11-03-Trump-bot/) Eight Portions blog post.
 
-## Build
+## Development
 
 The following steps are what I did to generate the container and model. I don't
 typically do this interactively, but since the training would take days I chose
@@ -64,6 +64,8 @@ $ docker run --rm -it vanessa/natacha-bot:latest python sample.py "I want to"
 
 I want to be the power syndicate that they are the many with the profit present that she is a significant of the new the controlled profit since they are state the corruption of the state of the artist sender that is the organization and a corruption when it is a thing at the media many are they have the sen. Something can't go from your mind. I am not going to find the more again and not not sure that now isn't a but like a form of a break. If you will know the facts any of your evidence ? You can
 ```
+
+## Build
 
 I also provide a [Dockerfile](Dockerfile) that could be used as a start for generating
 the same image - I'll be running it to build / test if it works, but since it takes
