@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  schedule:
+    # Nightly at 2:30am 
+    - cron: 30 2 * * *
+  pull_request:
+    branches_ignore: []
+
+jobs:
+  formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate Natacha Wisdom
+        run: |
+          docker run -it --rm vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
+          cat /tmp/wisdom
