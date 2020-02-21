@@ -6,6 +6,8 @@ set_environ.sh
 
 # C extensions
 *.so
+data/natacha/export
+data/natacha/input.txt
 
 # Distribution / packaging
 .Python

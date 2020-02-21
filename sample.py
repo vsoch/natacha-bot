@@ -61,7 +61,7 @@ class Sampler():
         return sample_clean
 
     # Sample text from model
-    def get_sample(self):
+    def get_sample(self, length):
 
         if self.seed.strip()[-1:] != '.':
             # If seed is not a full sentence
@@ -94,7 +94,7 @@ class Sampler():
 
         # Sample from the word-level model
         word_sample = self.get_sample_raw(
-            'word', sample_starter, self.word_temperature, 500)
+            'word', sample_starter, self.word_temperature, length)
 
         # Join char-level sample with word-level sample
         sample_clean = sample_starter + ' ' + word_sample
@@ -106,4 +106,5 @@ if __name__ == '__main__':
         sampler = Sampler(sys.argv[1])
     else:
         sampler = Sampler()
-    print sampler.get_sample()
+    length = random.choice([25, 50, 100])
+    print(sampler.get_sample(length))
