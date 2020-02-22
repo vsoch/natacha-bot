@@ -1,0 +1,33 @@
+# Setup
+title:        Natacha Bot
+tagline:      ""
+baseurl:      "/natacha-bot"
+github:       "https://www.github.com/vsoch/natacha-bot"
+
+# About/contact
+author:
+  name:       "@vsoch"
+  url:        https://vsoch.github.io/natacha-bot
+
+# Collections
+collections:
+    wisdom:
+      output: true
+      permalink: /:collection/:title/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "wisdom"
+      type: "wisdom"
+    values:
+      layout: "page"
+
+#Others
+markdown: kramdown
