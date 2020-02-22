@@ -4,8 +4,6 @@ on:
   schedule:
     # Nightly at 2:30am 
     - cron: 30 2 * * *
-  pull_request:
-    branches_ignore: []
 
 jobs:
   generate-wisdom:
@@ -40,7 +38,7 @@ jobs:
           git config --global user.email "github-actions@users.noreply.github.com"
 
           git add "${WISDOM_FILE}"
-          git commit -m "Automated deployment to update contributors.svg $(date '+%Y-%m-%d')" || exit 0
+          git commit -m "Automated generation of natacha-bot wisdom $(date '+%Y-%m-%d')" || exit 0
           git push origin "${BRANCH_FROM}"
 
           # Absolutely must download specific sha of script
