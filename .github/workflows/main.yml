@@ -44,6 +44,6 @@ jobs:
           git push origin "${BRANCH_FROM}"
 
           # Absolutely must download specific sha of script
-          wget https://raw.githubusercontent.com/sourcecred/sourcecred-action/9e1f0644a2398f8c99b8b19fd685566fce207959/.github/workflows/pull_request.sh
+          wget https://raw.githubusercontent.com/vsoch/natacha-bot/f6d6534d251851f42282ff510842d8fd38422351/.github/workflows/pull_request.sh
           chmod +x pull_request.sh
-          /bin/bash pull_request.sh
+          /bin/bash -e pull_request.sh
