@@ -110,7 +110,7 @@ a:hover { text-decoration: underline; }
     width: 100%; /* Full width */
 }
 
-.project-name { margin-top: 0px; margin-bottom: 0.1rem; color:#fff; padding-left: 200px}
+.project-name { margin-top: 0px; margin-bottom: 0.1rem; color:#fff;}
 @media screen and (min-width: 64em) { .project-name { font-size: 1.5rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .project-name { font-size: 1.5rem; } }
 @media screen and (max-width: 42em) { .project-name { font-size: 1.5rem; } }
