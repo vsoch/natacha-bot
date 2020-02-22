@@ -8,12 +8,12 @@ on:
     branches_ignore: []
 
 jobs:
-  formatting:
+  generate-wisdom:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Generate Natacha Wisdom
         run: |
-          docker run -it --rm vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
+          docker run --rm --env TERM=xterm-256color vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
           cat /tmp/wisdom
