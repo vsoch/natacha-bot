@@ -8,12 +8,42 @@ on:
     branches_ignore: []
 
 jobs:
-  formatting:
+  generate-wisdom:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Generate Natacha Wisdom
         run: |
-          docker run -it --rm vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
-          cat /tmp/wisdom
+          docker run --rm --env TERM=xterm-256color vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
+          WISDOM_FILE="docs/_wisdom/$(date '+%Y-%m-%d').md"
+          echo "Creating wisdom file ${WISDOM_FILE}"
+          cp util/template.md "${WISDOM_FILE}"
+          cat /tmp/wisdom >> "${WISDOM_FILE}"
+          cat "${WISDOM_FILE}"
+          echo ::set-env name=WISDOM_FILE::${WISDOM_FILE}
+
+      - name: Open Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_AGAINST: "master"
+        run: |
+          echo "GitHub Actor: ${GITHUB_ACTOR}"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git branch
+
+          export BRANCH_FROM="update/natacha-wisdom-$(date '+%Y-%m-%d')"
+          git checkout -b "${BRANCH_FROM}"
+          git branch
+
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+
+          git add "${WISDOM_FILE}"
+          git commit -m "Automated deployment to update contributors.svg $(date '+%Y-%m-%d')" || exit 0
+          git push origin "${BRANCH_FROM}"
+
+          # Absolutely must download specific sha of script
+          wget https://raw.githubusercontent.com/vsoch/natacha-bot/f6d6534d251851f42282ff510842d8fd38422351/.github/workflows/pull_request.sh
+          chmod +x pull_request.sh
+          /bin/bash -e pull_request.sh
