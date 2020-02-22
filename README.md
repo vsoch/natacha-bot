@@ -1,5 +1,7 @@
 # Natacha Bot
 
+![docs/natacha-bot.png](docs/natacha-bot.png)
+
 The _natacha bot_ generates posts in the style of an individual, Natacha. It is derived from the [Trump bot](https://github.com/rtlee9/Trump-bot) using Facebook posts and comments using a [word-level RNN](https://github.com/larspars/word-rnn) and [pre-trained](http://nlp.stanford.edu/projects/glove/) GloVe word vectors. This repo corresponds to [this](https://eightportions.com/2016-11-03-Trump-bot/) Eight Portions blog post.
 
 ## Development

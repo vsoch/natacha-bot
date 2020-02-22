@@ -8,6 +8,8 @@ set_environ.sh
 *.so
 data/natacha/export
 data/natacha/input.txt
+_site
+.jekyll-cache
 
 # Distribution / packaging
 .Python
