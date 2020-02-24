@@ -67,12 +67,38 @@ $ docker run --rm -it vanessa/natacha-bot:latest python sample.py "I want to"
 I want to be the power syndicate that they are the many with the profit present that she is a significant of the new the controlled profit since they are state the corruption of the state of the artist sender that is the organization and a corruption when it is a thing at the media many are they have the sen. Something can't go from your mind. I am not going to find the more again and not not sure that now isn't a but like a form of a break. If you will know the facts any of your evidence ? You can
 ```
 
+Note that this shows manual generation of the model using the training container,
+which is very large (~15GB). To distribute you likely want to use the multistage build, discussed next.
+
 ## Build
 
-I also provide a [Dockerfile](Dockerfile) that could be used as a start for generating
-the same image - I'll be running it to build / test if it works, but since it takes
-a few days, I don't know for sure if it works yet.
+The included [Dockerfile](Dockerfile) can be used as a start for generating
+the same image.
 
+```bash
+docker build -t vanessa/natacha-bot .
+```
+
+But then you likely want to build a smaller container using a multistage build to
+just copy the finished models from cv, and then be done!
+
+```bash
+docker build -f Dockerfile.bot -t natacha-bot .
+```
+
+Note that I name it something different, even though ultimately I want to tag
+it as vanessa/natacha-bot. I do this in case there is a mistake - I don't want
+to lose the original container. You can then test:
+
+```bash
+docker run -it natacha-bot
+```
+
+And then tag the final container to save it!
+
+```bash
+docker tag natacha-bot vanessa/natacha-bot
+```
 
 ## Credits, inspiration and similar projects
 
