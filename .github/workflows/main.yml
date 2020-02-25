@@ -13,7 +13,7 @@ jobs:
 
       - name: Generate Natacha Wisdom
         run: |
-          docker run --rm --env TERM=xterm-256color vanessa/natacha-bot:latest python sample.py > /tmp/wisdom
+          docker run --rm --env TERM=xterm-256color vanessa/natacha-bot:latest > /tmp/wisdom
           WISDOM_FILE="docs/_wisdom/$(date '+%Y-%m-%d').md"
           echo "Creating wisdom file ${WISDOM_FILE}"
           cp util/template.md "${WISDOM_FILE}"
