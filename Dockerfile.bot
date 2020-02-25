@@ -1,0 +1,7 @@
+FROM vanessa/natacha-bot:latest as builder
+# docker build -f Dockerfile.bot -t natacha-bot .
+FROM rtlee/t-bot:sample
+COPY --from=builder /root/Trump-bot/cv/char-rnn-trained.t7 /root/Trump-bot/cv/char-rnn-trained.t7 
+COPY --from=builder /root/Trump-bot/cv/word-rnn-trained.t7 /root/Trump-bot/cv/word-rnn-trained.t7
+COPY sample.py /root/Trump-bot/sample.py
+ENTRYPOINT ["python", "/root/Trump-bot/sample.py"]
