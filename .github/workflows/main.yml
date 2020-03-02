@@ -2,8 +2,8 @@ name: CI
 
 on:
   schedule:
-    # Nightly at 2:30am 
-    - cron: 30 2 * * *
+    # Once a month
+    - cron: 0 0 1 * *
 
 jobs:
   generate-wisdom:
