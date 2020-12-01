@@ -19,7 +19,7 @@ jobs:
           cp util/template.md "${WISDOM_FILE}"
           cat /tmp/wisdom >> "${WISDOM_FILE}"
           cat "${WISDOM_FILE}"
-          echo ::set-env name=WISDOM_FILE::${WISDOM_FILE}
+          echo "WISDOM_FILE=${WISDOM_FILE}" >> $GITHUB_ENV
 
       - name: Open Pull Request
         env:
